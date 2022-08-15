@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, #5b0682, #807a7a);
+    align-items: center;
+    color: white;
+}
+
+.header-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header-logo > img{
+    width:85px;
+    height:75px;
+    margin-right:20px;
+}
+
+.header-logo > h1{
+    font-size: 45px;
+}
+
+.header > h1{
+    margin-right: 60px;
+}
