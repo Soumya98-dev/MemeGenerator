@@ -1,0 +1,30 @@
+.meme-form {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.meme-form > input[type="text"] {
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    padding: 10px;
+    color: blue;
+    font-size: 1rem;
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.meme-form > button {
+    background-image: linear-gradient(to right, #5b0682, #807a7a);
+    color: white;
+    width: 52%;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.meme-form > button > i{
+    margin-left: 10px;
+   color:lightseagreen;
+    border: 2px solid yellow;
+}
