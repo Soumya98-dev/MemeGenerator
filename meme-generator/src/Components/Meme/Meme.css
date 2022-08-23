@@ -21,18 +21,37 @@
     padding: 10px;
     font-size: 20px;
     cursor: pointer;
-    margin-left:30px;
+    margin-left: 30px;
 }
 
-.meme-form > button > i{
+.meme-form > button > i {
     margin-left: 10px;
-   color:lightseagreen;
+    color: lightseagreen;
     border: 2px solid yellow;
 }
 
-.meme-section > img{
-    width:30%;
+
+.meme > img {
+    width: 30%;
     display: block;
     margin: 2rem auto;
-    border: 1px solid;
+}
+
+.meme-text {
+    position: relative;
+    color: rgba(226, 43, 131, 0.97);
+    left: 680px;
+    font-size: 80px;
+    font-weight: 900;
+    text-shadow: 2px 2px #ba8787;
+}
+
+.top {
+    position: absolute;
+    top: 390px;
+}
+
+.bottom {
+    position: absolute;
+    top: 605px;
 }
