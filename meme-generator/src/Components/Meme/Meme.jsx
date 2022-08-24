@@ -1,6 +1,5 @@
 import React from "react";
 import "./Meme.css";
-import memesData from "../../memesData.js";
 
 function Meme() {
   const [memeImage, setMemeImage] = React.useState({
@@ -8,13 +7,15 @@ function Meme() {
     bottomText: "",
     randomImage: "https://i.imgflip.com/30b1gx.jpg",
   });
-  const [allMemeImages, setAllMemeImages] = React.useState(memesData);
+  const [allMemeImages, setAllMemeImages] = React.useState([]);
 
+  // *** FOR THE ALT ATTRIBUTE IN 'img'
   const [memeName, setMemeName] = React.useState("");
 
   function handleButtonClick() {
     //*** IMAGE URL(SRC)
-    const randomImageUrl = allMemeImages["data"]["memes"].map((item) => {
+
+    const randomImageUrl = allMemeImages.map((item) => {
       return item["url"];
     });
     const res = Math.floor(Math.random() * randomImageUrl.length);
@@ -25,11 +26,12 @@ function Meme() {
       randomImage: url,
     }));
     //*** IMAGE NAME(ALT)
-    const imageName = memesData["data"]["memes"].map((item) => {
-      return item["name"];
-    });
-    const randomName = Math.floor(Math.random() * imageName.length);
-    setMemeName(imageName[randomName]);
+    // const imageName = memesData["data"]["memes"].map((item) => {
+    //   return item["name"];
+    // });
+    // const imageName = allMemeImages.data.memes["name"];
+    // const randomName = Math.floor(Math.random() * imageName.length);
+    // setMemeName(imageName[randomName]);
   }
 
   function handleChange(event) {
@@ -39,6 +41,12 @@ function Meme() {
       [name]: [value],
     }));
   }
+
+  React.useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => setAllMemeImages(data["data"]["memes"]));
+  }, []);
 
   return (
     <section className="meme-section">
